@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#2bafa8" />
     <title>ぱっぷすラボ — PAPS-Lab</title>
-    <meta name="description" content="ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたオープンソースのツール群を公開する場です。Paprika と PAssist を公開中。" />
+    <meta name="description" content="ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan を公開中。" />
     <link rel="icon" href="img/paps-logo.png" />
     <!-- OGP -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="ぱっぷすラボ — PAPS-Lab" />
-    <meta property="og:description" content="ぱっぷすの支援活動から生まれた、OSS のツール群。Paprika（ブラウザ自動化）と PAssist（1ウィンドウ共有）を公開中。" />
+    <meta property="og:description" content="ぱっぷすの支援活動から生まれたツール群。Paprika（ブラウザ自動化）、PAssist（1ウィンドウ共有）、netscan（ネットワーク総合診断）を公開中。" />
     <meta property="og:image" content="https://paps-jp.github.io/img/paps-logo.png" />
     <meta property="og:url" content="https://paps-jp.github.io/" />
     <meta property="og:locale" content="ja_JP" />
@@ -26,7 +26,8 @@
       "sameAs":[
         "https://github.com/paps-jp",
         "https://paps-jp.github.io/paprika/",
-        "https://paps-jp.github.io/passist/"
+        "https://paps-jp.github.io/passist/",
+        "https://netscan.paps.jp/"
       ]
     }</script>
     <style>
@@ -106,11 +107,14 @@
       .proj-ico img{width:46px;height:46px;display:block}
       .proj-paprika .proj-ico{background:#fffbef}
       .proj-passist .proj-ico{background:#f4f7fc}
+      .proj-netscan .proj-ico{background:var(--teal-l)}
+      .proj-netscan .netscan-ic{width:36px;height:36px;color:var(--teal-d);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
       .proj h3{margin:0;font-size:22px;letter-spacing:.3px}
       .proj h3 .ja{display:block;font-size:12.5px;color:var(--mut);font-weight:600;margin-top:2px;letter-spacing:.6px}
       .proj .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:12px;letter-spacing:.4px}
       .proj-paprika .tag{background:var(--sun-l);color:#9c7a00}
       .proj-passist .tag{background:#eaf1ff;color:#2756c6}
+      .proj-netscan .tag{background:var(--teal-l);color:var(--teal-d)}
       .proj p.desc{margin:0 0 14px;color:#334052;font-size:14.5px;line-height:1.85;flex:1}
       .proj ul.feat{margin:0 0 18px;padding:0;list-style:none;font-size:13.5px;color:var(--mut)}
       .proj ul.feat li{display:flex;align-items:flex-start;gap:8px;padding:3px 0}
@@ -164,6 +168,7 @@
       <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol>
       <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
       <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></symbol>
     </svg>
 
     <nav class="nav">
@@ -184,7 +189,7 @@
     <header class="hero">
       <div class="logo-chip"><img src="img/paps-logo.png" alt="PAPS ロゴ" /></div>
       <h1 class="tagline">支援の現場から、オープンソースへ。<span class="lab-en">PAPS-LAB</span></h1>
-      <p class="sub">ぱっぷすラボは、特定非営利活動法人 <strong>ぱっぷす (PAPS)</strong> の支援活動の中から生まれた、オープンソースのツール群を公開する場です。</p>
+      <p class="sub">ぱっぷすラボは、特定非営利活動法人 <strong>ぱっぷす (PAPS)</strong> の支援活動の中から生まれた、ツール・Web サービスを公開する場です。</p>
       <div class="cta">
         <a class="btn btn-primary" href="#projects"><svg class="ic"><use href="#i-spark"/></svg>プロジェクトを見る</a>
         <a class="btn btn-ghost" href="https://github.com/paps-jp" target="_blank" rel="noopener"><svg class="ic"><use href="#i-git-branch"/></svg>GitHub</a>
@@ -212,8 +217,8 @@
           </div>
           <div class="pill">
             <div class="ico c-sun"><svg class="ic"><use href="#i-code"/></svg></div>
-            <h3>OSSとして公開</h3>
-            <p>同じ課題に向き合う団体や個人と知見を共有するため、ソースコードと使い方を公開しています。</p>
+            <h3>オープンに公開</h3>
+            <p>ソースコードや Web ツールを公開し、同じ課題に向き合う団体や個人と知見を共有しています。</p>
           </div>
         </div>
       </div>
@@ -222,7 +227,7 @@
     <section class="block" id="projects" style="background:linear-gradient(180deg,#f0faf8 0%,#fafcfb 100%)">
       <div class="wrap">
         <h2 class="title">公開中の<span class="accent">プロジェクト</span></h2>
-        <p class="lead">いま、ぱっぷすラボから公開している OSS プロジェクトです。</p>
+        <p class="lead">いま、ぱっぷすラボから公開しているプロジェクトです。</p>
         <div class="projects">
 
           <article class="proj proj-paprika">
@@ -277,6 +282,30 @@
               </a>
               <a class="outline" href="https://github.com/paps-jp/passist" target="_blank" rel="noopener">
                 <svg class="ic"><use href="#i-git-branch"/></svg>GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="proj proj-netscan">
+            <div class="proj-head">
+              <div class="proj-ico"><svg class="netscan-ic" aria-hidden="true"><use href="#i-scan"/></svg></div>
+              <div>
+                <h3>netscan<span class="ja">ネットスキャン</span></h3>
+              </div>
+            </div>
+            <span class="tag">ネットワーク総合診断 / Web ツール</span>
+            <p class="desc">
+              ドメイン名や IP アドレスを入力するだけで、<strong>DNS・WHOIS・IP 位置情報・Ping・経路・ポート・SSL・サブドメイン</strong>などをまとめて確認できる、ブラウザだけで動くネットワーク総合診断ツール。
+              削除請求や悪用調査の現場で実際に使われている機能を、誰でも試せる形で公開しています。
+            </p>
+            <ul class="feat">
+              <li><svg class="ic"><use href="#i-check"/></svg>DNS / WHOIS / IP 位置情報をワンクリックで</li>
+              <li><svg class="ic"><use href="#i-check"/></svg>Ping・経路・ポートスキャン・Nmap・HTTP</li>
+              <li><svg class="ic"><use href="#i-check"/></svg>SSL 証明書・サブドメイン列挙</li>
+            </ul>
+            <div class="actions">
+              <a class="primary" href="https://netscan.paps.jp/" target="_blank" rel="noopener">
+                <svg class="ic"><use href="#i-external"/></svg>サイトを開く
               </a>
             </div>
           </article>
@@ -341,6 +370,7 @@
         <a href="https://github.com/paps-jp" target="_blank" rel="noopener">github.com/paps-jp</a>
         <a href="https://paps-jp.github.io/paprika/" target="_blank" rel="noopener">Paprika</a>
         <a href="https://paps-jp.github.io/passist/" target="_blank" rel="noopener">PAssist</a>
+        <a href="https://netscan.paps.jp/" target="_blank" rel="noopener">netscan</a>
       </div>
       <div class="copy">© 特定非営利活動法人ぱっぷす (PAPS)</div>
     </footer>
