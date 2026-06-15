@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#188f8e" />
+    <meta name="theme-color" content="#2bafa8" />
     <title>ぱっぷすラボ — PAPS-Lab</title>
     <meta name="description" content="ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan を公開中。" />
     <link rel="icon" href="img/paps-logo.png" />
+    <link rel="alternate" hreflang="ja" href="https://paps-jp.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://paps-jp.github.io/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://paps-jp.github.io/" />
     <!-- OGP -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="ぱっぷすラボ — PAPS-Lab" />
@@ -14,6 +17,7 @@
     <meta property="og:image" content="https://paps-jp.github.io/img/paps-logo.png" />
     <meta property="og:url" content="https://paps-jp.github.io/" />
     <meta property="og:locale" content="ja_JP" />
+    <meta property="og:locale:alternate" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://paps-jp.github.io/" />
     <script type="application/ld+json">{
@@ -32,12 +36,11 @@
     }</script>
     <style>
       :root{
-        --teal:#188f8e; --teal-d:#0f6f6e; --teal-l:#dff0ef;
-        --coral:#cf567f; --coral-l:#fbe4ec;
-        --beige:#cca67e; --beige-l:#f3e9da;
-        --navy:#213258; --navy-d:#192e56;
-        --ink:#213258; --mut:#5b6b80;
-        --bg:#fafcfb; --card:#fff; --line:#e7eee9;
+        --teal:#2bafa8; --teal-d:#1f8e88; --teal-l:#e6f6f5;
+        --coral:#ff8fa0; --coral-l:#ffe4e8;
+        --sun:#f5b800; --sun-l:#fff3c8;
+        --ink:#1f2733; --mut:#5b6b80;
+        --bg:#fafcfb; --card:#fff; --line:#e9eef5;
         --maxw:1040px;
       }
       *{box-sizing:border-box}
@@ -48,7 +51,7 @@
 
       /* インライン Lucide アイコン */
       .ic{width:1.1em;height:1.1em;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em}
-      a:focus-visible,.btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+      a:focus-visible,.btn:focus-visible,.lang-toggle:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 
       /* nav */
       .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line)}
@@ -57,22 +60,23 @@
       .brand img{height:34px;width:auto;display:block}
       .brand .lab{font-size:15.5px}
       .brand .lab small{display:block;font-size:11px;color:var(--mut);font-weight:600;letter-spacing:1px}
-      .nav .links{display:flex;gap:18px;font-size:14.5px}
+      .nav .links{display:flex;align-items:center;gap:18px;font-size:14.5px}
       .nav .links a{color:var(--ink);text-decoration:none;font-weight:600}
       .nav .links a:hover{color:var(--teal-d)}
-      @media (max-width:560px){ .nav .links{gap:12px;font-size:13.5px} .nav .links a.hide-sm{display:none} }
+      .lang-toggle{background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:12.5px;padding:6px 12px;border-radius:999px;cursor:pointer;font-family:inherit;transition:.15s;line-height:1.2;letter-spacing:.3px}
+      .lang-toggle:hover{border-color:var(--teal);color:var(--teal-d);background:#f6fcfb}
+      @media (max-width:560px){ .nav .links{gap:10px;font-size:13.5px} .nav .links a.hide-sm{display:none} .lang-toggle{padding:5px 10px;font-size:12px} }
 
       /* hero */
-      .hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#0f6f6e 0%,#188f8e 50%,#3eb6a8 100%);color:#fff;text-align:center;padding:72px 24px 86px}
+      .hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#2bafa8 0%,#37c4bb 55%,#7adcc7 100%);color:#fff;text-align:center;padding:66px 24px 78px}
       .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:
-        radial-gradient(620px 400px at 50% -12%, rgba(255,255,255,.28), transparent 62%),
-        radial-gradient(420px 320px at 86% 14%, rgba(255,255,255,.14), transparent 60%),
-        radial-gradient(560px 420px at 14% 44%, rgba(207,86,127,.22), transparent 62%),
-        radial-gradient(380px 280px at 88% 80%, rgba(204,166,126,.22), transparent 62%)}
+        radial-gradient(620px 400px at 50% -12%, rgba(255,255,255,.34), transparent 62%),
+        radial-gradient(420px 320px at 86% 16%, rgba(255,255,255,.16), transparent 60%),
+        radial-gradient(560px 420px at 14% 42%, rgba(132,224,216,.32), transparent 62%)}
       .hero>*{position:relative;z-index:1}
-      .logo-chip{display:inline-grid;place-items:center;background:#fff;border-radius:32px;padding:22px 34px;box-shadow:0 18px 44px rgba(15,111,110,.45),0 8px 20px rgba(207,86,127,.28)}
-      .logo-chip img{height:clamp(110px,18vw,160px);width:auto;display:block}
-      .tagline{margin:26px auto 8px;font-size:clamp(24px,3.6vw,36px);font-weight:800;letter-spacing:.3px;max-width:780px}
+      .logo-chip{display:inline-grid;place-items:center;background:#fff;border-radius:30px;width:144px;height:144px;box-shadow:0 18px 44px rgba(43,175,168,.40),0 8px 20px rgba(255,154,166,.30)}
+      .logo-chip img{height:100px;width:auto;display:block}
+      .tagline{margin:26px auto 8px;font-size:clamp(22px,3.4vw,34px);font-weight:800;letter-spacing:.3px;max-width:780px}
       .sub{margin:0 auto;color:rgba(255,255,255,.95);font-size:15.5px;max-width:680px}
       .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
       .btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:700;text-decoration:none;padding:13px 24px;border-radius:999px;transition:.15s;border:1px solid transparent;cursor:pointer}
@@ -96,8 +100,8 @@
       .pill h3{margin:0 0 4px;font-size:15.5px}
       .pill p{margin:0;color:var(--mut);font-size:13.5px}
       .ico.c-teal{background:var(--teal-l);color:var(--teal-d)}
-      .ico.c-coral{background:var(--coral-l);color:var(--coral)}
-      .ico.c-beige{background:var(--beige-l);color:#8a6a3f}
+      .ico.c-coral{background:var(--coral-l);color:#e15c75}
+      .ico.c-sun{background:var(--sun-l);color:#b8860b}
 
       /* projects */
       .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
@@ -111,9 +115,9 @@
       .proj-netscan .proj-ico{background:var(--teal-l)}
       .proj-netscan .netscan-ic{width:36px;height:36px;color:var(--teal-d);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
       .proj h3{margin:0;font-size:22px;letter-spacing:.3px}
-      .proj h3 .ja{display:block;font-size:12.5px;color:var(--mut);font-weight:600;margin-top:2px;letter-spacing:.6px}
+      .proj h3 .sub{display:block;font-size:12.5px;color:var(--mut);font-weight:600;margin-top:2px;letter-spacing:.6px;line-height:1.4}
       .proj .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:12px;letter-spacing:.4px}
-      .proj-paprika .tag{background:#fff3c8;color:#9c7a00}
+      .proj-paprika .tag{background:var(--sun-l);color:#9c7a00}
       .proj-passist .tag{background:#eaf1ff;color:#2756c6}
       .proj-netscan .tag{background:var(--teal-l);color:var(--teal-d)}
       .proj p.desc{margin:0 0 14px;color:#334052;font-size:14.5px;line-height:1.85;flex:1}
@@ -164,43 +168,46 @@
       <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
       <symbol id="i-spark" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
       <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
-      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></symbol>
-      <symbol id="i-app-window" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 4v4"/><path d="M2 8h20"/><path d="M6 4v4"/></symbol>
       <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol>
       <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
       <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
       <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></symbol>
+      <symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
     </svg>
 
     <nav class="nav">
       <div class="wrap row">
         <a class="brand" href="/">
-          <img src="img/paps-logo.png" alt="PAPS ロゴ" />
-          <span class="lab">ぱっぷすラボ<small>PAPS-LAB</small></span>
+          <img src="img/paps-logo.png" alt="PAPS" />
+          <span class="lab" data-i18n="nav.brand">ぱっぷすラボ<small>PAPS-LAB</small></span>
         </a>
         <div class="links">
-          <a href="#projects">プロジェクト</a>
-          <a href="#about" class="hide-sm">ラボについて</a>
+          <a href="#projects" data-i18n="nav.projects">プロジェクト</a>
+          <a href="#about" class="hide-sm" data-i18n="nav.about">ラボについて</a>
           <a href="https://paps.jp" target="_blank" rel="noopener">paps.jp</a>
           <a href="https://github.com/paps-jp" target="_blank" rel="noopener">GitHub</a>
+          <button class="lang-toggle" id="lang-toggle" type="button"
+            data-i18n="nav.lang.next"
+            data-i18n-attr="aria-label:nav.lang.aria"
+            aria-label="言語を English に切り替える">English</button>
         </div>
       </div>
     </nav>
 
     <header class="hero">
-      <div class="logo-chip"><img src="img/papslab.svg" alt="ぱっぷすラボ ロゴ" /></div>
-      <h1 class="tagline">支援の現場から、オープンソースへ。</h1>
-      <p class="sub">ぱっぷすラボは、特定非営利活動法人 <strong>ぱっぷす (PAPS)</strong> の支援活動の中から生まれた、ツール・Web サービスを公開する場です。</p>
+      <div class="logo-chip"><img src="img/papslab.svg" alt="PAPS-Lab" /></div>
+      <h1 class="tagline" data-i18n="hero.tagline">支援の現場から、オープンソースへ。</h1>
+      <p class="sub" data-i18n-html="hero.sub">ぱっぷすラボは、特定非営利活動法人 <strong>ぱっぷす (PAPS)</strong> の支援活動の中から生まれた、ツール・Web サービスを公開する場です。</p>
       <div class="cta">
-        <a class="btn btn-primary" href="#projects"><svg class="ic"><use href="#i-spark"/></svg>プロジェクトを見る</a>
+        <a class="btn btn-primary" href="#projects"><svg class="ic"><use href="#i-spark"/></svg><span data-i18n="hero.cta.projects">プロジェクトを見る</span></a>
         <a class="btn btn-ghost" href="https://github.com/paps-jp" target="_blank" rel="noopener"><svg class="ic"><use href="#i-git-branch"/></svg>GitHub</a>
       </div>
     </header>
 
     <section class="block" id="about">
       <div class="wrap">
-        <h2 class="title">ぱっぷすラボ<span class="accent">とは</span></h2>
-        <p class="lead">
+        <h2 class="title" data-i18n-html="about.title">ぱっぷすラボ<span class="accent">とは</span></h2>
+        <p class="lead" data-i18n="about.lead">
           デジタル性暴力の相談支援、削除請求、アウトリーチ、調査研究――。
           ぱっぷすの活動現場には、市販のツールでは満たせないニーズがいくつもあります。
           そこで自分たちで作ったツールのうち、他の団体・支援現場・教育・研究などでも役立ちそうなものを、誰でも使える形で公開しています。
@@ -208,18 +215,18 @@
         <div class="about-grid">
           <div class="pill">
             <div class="ico c-teal"><svg class="ic"><use href="#i-heart-handshake"/></svg></div>
-            <h3>支援現場から生まれた</h3>
-            <p>相談・削除請求・アウトリーチの現場で、実際に必要だった機能だけを実装しています。</p>
+            <h3 data-i18n="about.pill1.title">支援現場から生まれた</h3>
+            <p data-i18n="about.pill1.desc">相談・削除請求・アウトリーチの現場で、実際に必要だった機能だけを実装しています。</p>
           </div>
           <div class="pill">
             <div class="ico c-coral"><svg class="ic"><use href="#i-shield"/></svg></div>
-            <h3>セキュリティを大切に</h3>
-            <p>被害当事者の安全と尊厳を守るために、設計段階からプライバシーとセキュリティを考えています。</p>
+            <h3 data-i18n="about.pill2.title">セキュリティを大切に</h3>
+            <p data-i18n="about.pill2.desc">被害当事者の安全と尊厳を守るために、設計段階からプライバシーとセキュリティを考えています。</p>
           </div>
           <div class="pill">
-            <div class="ico c-beige"><svg class="ic"><use href="#i-code"/></svg></div>
-            <h3>オープンに公開</h3>
-            <p>ソースコードや Web ツールを公開し、同じ課題に向き合う団体や個人と知見を共有しています。</p>
+            <div class="ico c-sun"><svg class="ic"><use href="#i-code"/></svg></div>
+            <h3 data-i18n="about.pill3.title">オープンに公開</h3>
+            <p data-i18n="about.pill3.desc">ソースコードや Web ツールを公開し、同じ課題に向き合う団体や個人と知見を共有しています。</p>
           </div>
         </div>
       </div>
@@ -227,31 +234,31 @@
 
     <section class="block" id="projects" style="background:linear-gradient(180deg,#f0faf8 0%,#fafcfb 100%)">
       <div class="wrap">
-        <h2 class="title">公開中の<span class="accent">プロジェクト</span></h2>
-        <p class="lead">いま、ぱっぷすラボから公開しているプロジェクトです。</p>
+        <h2 class="title" data-i18n-html="projects.title">公開中の<span class="accent">プロジェクト</span></h2>
+        <p class="lead" data-i18n="projects.lead">いま、ぱっぷすラボから公開しているプロジェクトです。</p>
         <div class="projects">
 
           <article class="proj proj-paprika">
             <div class="proj-head">
-              <div class="proj-ico"><img src="img/paprika.svg" alt="Paprika アイコン" /></div>
+              <div class="proj-ico"><img src="img/paprika.svg" alt="Paprika" /></div>
               <div>
-                <h3>Paprika<span class="ja">パプリカ</span></h3>
+                <h3>Paprika<span class="sub" data-i18n="paprika.sub">パプリカ</span></h3>
               </div>
             </div>
-            <span class="tag">ブラウザ自動化 / 証拠保全</span>
-            <p class="desc">
+            <span class="tag" data-i18n="paprika.tag">ブラウザ自動化 / 証拠保全</span>
+            <p class="desc" data-i18n-html="paprika.desc">
               分散ワーカー上の Chrome を <strong>Playwright スタイルの Python・PHP SDK</strong> で操作し、AI を併用して、
               ページの<strong>画像・動画・リンク</strong>をまとめて収集するブラウザ自動化プラットフォーム。
               削除請求の証拠保全と、ProtectionAI 基盤として開発されました。
             </p>
             <ul class="feat">
-              <li><svg class="ic"><use href="#i-check"/></svg>Python / PHP SDK（Playwright 互換のAPI）</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>分散ワーカー + 管理画面のライブパネル</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>AI を組み合わせた収集ジョブ</li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="paprika.feat1">Python / PHP SDK（Playwright 互換のAPI）</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="paprika.feat2">分散ワーカー + 管理画面のライブパネル</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="paprika.feat3">AI を組み合わせた収集ジョブ</span></li>
             </ul>
             <div class="actions">
               <a class="primary" href="https://paps-jp.github.io/paprika/" target="_blank" rel="noopener">
-                <svg class="ic"><use href="#i-external"/></svg>サイトを開く
+                <svg class="ic"><use href="#i-external"/></svg><span data-i18n="common.cta.site">サイトを開く</span>
               </a>
               <a class="outline" href="https://github.com/paps-jp/paprika" target="_blank" rel="noopener">
                 <svg class="ic"><use href="#i-git-branch"/></svg>GitHub
@@ -261,25 +268,25 @@
 
           <article class="proj proj-passist">
             <div class="proj-head">
-              <div class="proj-ico"><img src="img/passist.svg" alt="PAssist アイコン" /></div>
+              <div class="proj-ico"><img src="img/passist.svg" alt="PAssist" /></div>
               <div>
-                <h3>PAssist<span class="ja">パシスト</span></h3>
+                <h3>PAssist<span class="sub" data-i18n="passist.sub">パシスト</span></h3>
               </div>
             </div>
-            <span class="tag">遠隔操作 / 1ウィンドウ共有</span>
-            <p class="desc">
+            <span class="tag" data-i18n="passist.tag">遠隔操作 / 1ウィンドウ共有</span>
+            <p class="desc" data-i18n-html="passist.desc">
               ブラウザだけで、Windows 上の <strong>1つのウィンドウだけ</strong>を共有・遠隔操作できる Windows ツール。
               相手は <strong>URL を開くだけ</strong>（アカウント・インストール不要）で操作を開始できます。
               デスクトップ全体は構造的に映りません。
             </p>
             <ul class="feat">
-              <li><svg class="ic"><use href="#i-check"/></svg>1ウィンドウだけを共有（デスクトップは映らない）</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>ゲストはブラウザのみ・アカウント不要</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>WebRTC で映像と操作を暗号化</li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="passist.feat1">1ウィンドウだけを共有（デスクトップは映らない）</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="passist.feat2">ゲストはブラウザのみ・アカウント不要</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="passist.feat3">WebRTC で映像と操作を暗号化</span></li>
             </ul>
             <div class="actions">
               <a class="primary" href="https://paps-jp.github.io/passist/" target="_blank" rel="noopener">
-                <svg class="ic"><use href="#i-external"/></svg>サイトを開く
+                <svg class="ic"><use href="#i-external"/></svg><span data-i18n="common.cta.site">サイトを開く</span>
               </a>
               <a class="outline" href="https://github.com/paps-jp/passist" target="_blank" rel="noopener">
                 <svg class="ic"><use href="#i-git-branch"/></svg>GitHub
@@ -291,22 +298,22 @@
             <div class="proj-head">
               <div class="proj-ico"><svg class="netscan-ic" aria-hidden="true"><use href="#i-scan"/></svg></div>
               <div>
-                <h3>netscan<span class="ja">ネットスキャン</span></h3>
+                <h3>netscan<span class="sub" data-i18n="netscan.sub">ネットスキャン</span></h3>
               </div>
             </div>
-            <span class="tag">ネットワーク総合診断 / Web ツール</span>
-            <p class="desc">
+            <span class="tag" data-i18n="netscan.tag">ネットワーク総合診断 / Web ツール</span>
+            <p class="desc" data-i18n-html="netscan.desc">
               ドメイン名や IP アドレスを入力するだけで、<strong>DNS・WHOIS・IP Location・Ping・経路・ポート・SSL・サブドメイン</strong>などをまとめて確認できる、ブラウザだけで動くネットワーク総合診断ツール。
               削除請求やセキュリティ調査の現場で実際に使われている機能を、誰でも試せる形で公開しています。
             </p>
             <ul class="feat">
-              <li><svg class="ic"><use href="#i-check"/></svg>DNS / WHOIS / IP Locationをワンクリックで</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>Ping・経路・ポートスキャン・Nmap・HTTP</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>SSL 証明書・サブドメイン列挙</li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="netscan.feat1">DNS / WHOIS / IP Location をワンクリックで</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="netscan.feat2">Ping・経路・ポートスキャン・Nmap・HTTP</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="netscan.feat3">SSL 証明書・サブドメイン列挙</span></li>
             </ul>
             <div class="actions">
               <a class="primary" href="https://netscan.paps.jp/" target="_blank" rel="noopener">
-                <svg class="ic"><use href="#i-external"/></svg>サイトを開く
+                <svg class="ic"><use href="#i-external"/></svg><span data-i18n="common.cta.site">サイトを開く</span>
               </a>
             </div>
           </article>
@@ -317,23 +324,23 @@
 
     <section class="block" id="paps">
       <div class="wrap">
-        <h2 class="title">運営団体 — <span class="accent">特定非営利活動法人ぱっぷす</span></h2>
-        <p class="lead">ぱっぷすラボは、ぱっぷす (PAPS) のプロジェクトとして運営されています。</p>
+        <h2 class="title" data-i18n-html="paps.title">運営団体 — <span class="accent">特定非営利活動法人ぱっぷす</span></h2>
+        <p class="lead" data-i18n="paps.lead">ぱっぷすラボは、ぱっぷす (PAPS) のプロジェクトとして運営されています。</p>
         <div class="paps-card">
-          <div class="pic"><img src="img/paps-logo.png" alt="PAPS ロゴ" /></div>
+          <div class="pic"><img src="img/paps-logo.png" alt="PAPS" /></div>
           <div>
-            <h3>ぱっぷす (PAPS)</h3>
+            <h3 data-i18n="paps.card.title">ぱっぷす (PAPS)</h3>
             <p class="mission"><em>PAPS is a non-profit organization whose mission is to “End to sexual exploitation.”</em></p>
-            <p>
+            <p data-i18n-html="paps.card.body1">
               ぱっぷすは、ポルノ被害と性暴力被害（とくに性的な画像や動画の拡散、リベンジポルノ、セクストーション、AI 生成によるなりすまし画像など、デジタル性暴力）への
               <strong>相談支援・削除請求・アウトリーチ・調査研究・政策提言</strong>を行う特定非営利活動法人です。
             </p>
-            <p>
+            <p data-i18n="paps.card.body2">
               ぱっぷすラボの各プロジェクトは、実際の支援現場での課題から発想され、検証され、改善されてきました。
               支援活動と並行して、技術的な知見もオープンに共有していくことを目指しています。
             </p>
             <a class="more" href="https://paps.jp" target="_blank" rel="noopener">
-              ぱっぷす公式サイト (paps.jp) <svg class="ic"><use href="#i-external"/></svg>
+              <span data-i18n="paps.card.more">ぱっぷす公式サイト (paps.jp)</span> <svg class="ic"><use href="#i-external"/></svg>
             </a>
           </div>
         </div>
@@ -342,24 +349,24 @@
 
     <section class="block" id="values" style="background:#f6fbfa">
       <div class="wrap">
-        <h2 class="title">ラボの<span class="accent">方針</span></h2>
-        <p class="lead">ぱっぷすラボがツールを公開するときに大切にしている考え方です。</p>
+        <h2 class="title" data-i18n-html="values.title">ラボの<span class="accent">方針</span></h2>
+        <p class="lead" data-i18n="values.lead">ぱっぷすラボがツールを公開するときに大切にしている考え方です。</p>
         <div class="values">
           <div class="value">
-            <h4><svg class="ic"><use href="#i-users"/></svg>現場の声を起点に</h4>
-            <p>相談員・削除請求担当・アウトリーチワーカーなど、実際に使う人の困りごとから設計を始めます。</p>
+            <h4><svg class="ic"><use href="#i-users"/></svg><span data-i18n="values.v1.title">現場の声を起点に</span></h4>
+            <p data-i18n="values.v1.desc">相談員・削除請求担当・アウトリーチワーカーなど、実際に使う人の困りごとから設計を始めます。</p>
           </div>
           <div class="value">
-            <h4><svg class="ic"><use href="#i-shield"/></svg>当事者の安全を最優先に</h4>
-            <p>収集する情報・残るログ・通信経路を最小限にとどめ、被害当事者を二次被害にさらしません。</p>
+            <h4><svg class="ic"><use href="#i-shield"/></svg><span data-i18n="values.v2.title">当事者の安全を最優先に</span></h4>
+            <p data-i18n="values.v2.desc">収集する情報・残るログ・通信経路を最小限にとどめ、被害当事者を二次被害にさらしません。</p>
           </div>
           <div class="value">
-            <h4><svg class="ic"><use href="#i-globe"/></svg>誰もが使える形で</h4>
-            <p>アカウントや有料サービスへの依存を避け、ブラウザや手元の PC で動くシンプルな構成を選びます。</p>
+            <h4><svg class="ic"><use href="#i-globe"/></svg><span data-i18n="values.v3.title">誰もが使える形で</span></h4>
+            <p data-i18n="values.v3.desc">アカウントや有料サービスへの依存を避け、ブラウザや手元の PC で動くシンプルな構成を選びます。</p>
           </div>
           <div class="value">
-            <h4><svg class="ic"><use href="#i-leaf"/></svg>長く使えるように</h4>
-            <p>依存ライブラリを絞り、ドキュメントを揃え、運用しながら一緒に育てていけるコードを心がけます。</p>
+            <h4><svg class="ic"><use href="#i-leaf"/></svg><span data-i18n="values.v4.title">長く使えるように</span></h4>
+            <p data-i18n="values.v4.desc">依存ライブラリを絞り、ドキュメントを揃え、運用しながら一緒に育てていけるコードを心がけます。</p>
           </div>
         </div>
       </div>
@@ -373,7 +380,9 @@
         <a href="https://paps-jp.github.io/passist/" target="_blank" rel="noopener">PAssist</a>
         <a href="https://netscan.paps.jp/" target="_blank" rel="noopener">netscan</a>
       </div>
-      <div class="copy">© 特定非営利活動法人ぱっぷす (PAPS)</div>
+      <div class="copy" data-i18n="footer.copy">© 特定非営利活動法人ぱっぷす (PAPS)</div>
     </footer>
+
+    <script src="i18n.js"></script>
   </body>
 </html>
