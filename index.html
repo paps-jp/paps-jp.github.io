@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#2bafa8" />
+    <meta name="theme-color" content="#188f8e" />
     <title>ぱっぷすラボ — PAPS-Lab</title>
     <meta name="description" content="ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan を公開中。" />
     <link rel="icon" href="img/paps-logo.png" />
@@ -32,10 +32,11 @@
     }</script>
     <style>
       :root{
-        --teal:#2bafa8; --teal-d:#1f8e88; --teal-l:#e6f6f5;
-        --coral:#ff8fa0; --coral-l:#ffe4e8;
-        --sun:#f5b800; --sun-l:#fff3c8;
-        --ink:#1f2733; --mut:#5b6b80;
+        --teal:#188f8e; --teal-d:#0f6f6e; --teal-l:#dff0ef;
+        --coral:#cf567f; --coral-l:#fbe4ec;
+        --beige:#cca67e; --beige-l:#f3e9da;
+        --navy:#213258; --navy-d:#192e56;
+        --ink:#213258; --mut:#5b6b80;
         --bg:#fafcfb; --card:#fff; --line:#e7eee9;
         --maxw:1040px;
       }
@@ -62,13 +63,14 @@
       @media (max-width:560px){ .nav .links{gap:12px;font-size:13.5px} .nav .links a.hide-sm{display:none} }
 
       /* hero */
-      .hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#2bafa8 0%,#37c4bb 55%,#7adcc7 100%);color:#fff;text-align:center;padding:72px 24px 86px}
+      .hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#0f6f6e 0%,#188f8e 50%,#3eb6a8 100%);color:#fff;text-align:center;padding:72px 24px 86px}
       .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:
-        radial-gradient(620px 400px at 50% -12%, rgba(255,255,255,.32), transparent 62%),
-        radial-gradient(420px 320px at 86% 14%, rgba(255,255,255,.16), transparent 60%),
-        radial-gradient(560px 420px at 14% 44%, rgba(255,212,222,.30), transparent 62%)}
+        radial-gradient(620px 400px at 50% -12%, rgba(255,255,255,.28), transparent 62%),
+        radial-gradient(420px 320px at 86% 14%, rgba(255,255,255,.14), transparent 60%),
+        radial-gradient(560px 420px at 14% 44%, rgba(207,86,127,.22), transparent 62%),
+        radial-gradient(380px 280px at 88% 80%, rgba(204,166,126,.22), transparent 62%)}
       .hero>*{position:relative;z-index:1}
-      .logo-chip{display:inline-grid;place-items:center;background:#fff;border-radius:32px;padding:22px 34px;box-shadow:0 18px 44px rgba(43,175,168,.40),0 8px 20px rgba(255,154,166,.30)}
+      .logo-chip{display:inline-grid;place-items:center;background:#fff;border-radius:32px;padding:22px 34px;box-shadow:0 18px 44px rgba(15,111,110,.45),0 8px 20px rgba(207,86,127,.28)}
       .logo-chip img{height:clamp(110px,18vw,160px);width:auto;display:block}
       .tagline{margin:26px auto 8px;font-size:clamp(24px,3.6vw,36px);font-weight:800;letter-spacing:.3px;max-width:780px}
       .sub{margin:0 auto;color:rgba(255,255,255,.95);font-size:15.5px;max-width:680px}
@@ -94,8 +96,8 @@
       .pill h3{margin:0 0 4px;font-size:15.5px}
       .pill p{margin:0;color:var(--mut);font-size:13.5px}
       .ico.c-teal{background:var(--teal-l);color:var(--teal-d)}
-      .ico.c-coral{background:var(--coral-l);color:#e15c75}
-      .ico.c-sun{background:var(--sun-l);color:#b8860b}
+      .ico.c-coral{background:var(--coral-l);color:var(--coral)}
+      .ico.c-beige{background:var(--beige-l);color:#8a6a3f}
 
       /* projects */
       .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
@@ -111,7 +113,7 @@
       .proj h3{margin:0;font-size:22px;letter-spacing:.3px}
       .proj h3 .ja{display:block;font-size:12.5px;color:var(--mut);font-weight:600;margin-top:2px;letter-spacing:.6px}
       .proj .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:12px;letter-spacing:.4px}
-      .proj-paprika .tag{background:var(--sun-l);color:#9c7a00}
+      .proj-paprika .tag{background:#fff3c8;color:#9c7a00}
       .proj-passist .tag{background:#eaf1ff;color:#2756c6}
       .proj-netscan .tag{background:var(--teal-l);color:var(--teal-d)}
       .proj p.desc{margin:0 0 14px;color:#334052;font-size:14.5px;line-height:1.85;flex:1}
@@ -215,7 +217,7 @@
             <p>被害当事者の安全と尊厳を守るために、設計段階からプライバシーとセキュリティを考えています。</p>
           </div>
           <div class="pill">
-            <div class="ico c-sun"><svg class="ic"><use href="#i-code"/></svg></div>
+            <div class="ico c-beige"><svg class="ic"><use href="#i-code"/></svg></div>
             <h3>オープンに公開</h3>
             <p>ソースコードや Web ツールを公開し、同じ課題に向き合う団体や個人と知見を共有しています。</p>
           </div>
