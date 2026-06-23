@@ -5,7 +5,7 @@
   const dict = {
     ja: {
       'doc.title': 'ぱっぷすラボ — PAPS-Lab',
-      'doc.description': 'ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan を公開中。',
+      'doc.description': 'ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline を公開中。',
 
       'nav.brand': 'ぱっぷすラボ',
       'nav.projects': 'プロジェクト',
@@ -50,6 +50,13 @@
       'netscan.feat2': 'Ping・経路・ポートスキャン・Nmap・HTTP',
       'netscan.feat3': 'SSL 証明書・サブドメイン列挙',
 
+      'pipeline.sub': 'パイプライン',
+      'pipeline.tag': 'GPU バッチ制御 / ジョブキュー',
+      'pipeline.desc': '推論・学習・解析などの複数バッチワークロードを同じ GPU フリートに同居させ、<strong>self-loop キュー</strong>で残った空き時間を別の workload で埋める制御プレーン。<strong>FastAPI + SQLite + React</strong> 製、ワーカーへの常駐は HTTP heartbeat のみで SSH 不要。',
+      'pipeline.feat1': 'self-loop キューで GPU を絶やさない',
+      'pipeline.feat2': '複数 workload を 1 fleet に同居 + 重み配分',
+      'pipeline.feat3': 'プラグイン方式 + Web UI で運用',
+
       'common.cta.site': 'サイトを開く',
 
       'paps.title': '運営団体 — <span class="accent">特定非営利活動法人ぱっぷす</span>',
@@ -75,7 +82,7 @@
 
     en: {
       'doc.title': 'PAPS-Lab — Tools from the front line of survivor support',
-      'doc.description': 'PAPS-Lab open-sources tools and web services born out of the support work of PAPS, a Japanese non-profit. Currently publishing Paprika, PAssist, and netscan.',
+      'doc.description': 'PAPS-Lab open-sources tools and web services born out of the support work of PAPS, a Japanese non-profit. Currently publishing Paprika, PAssist, netscan, and Pipeline.',
 
       'nav.brand': 'PAPS-Lab',
       'nav.projects': 'Projects',
@@ -119,6 +126,13 @@
       'netscan.feat1': 'DNS / WHOIS / IP Location at a click',
       'netscan.feat2': 'Ping, route, port scan, Nmap, HTTP probes',
       'netscan.feat3': 'SSL certificate inspection and subdomain enumeration',
+
+      'pipeline.sub': 'GPU batch scheduler',
+      'pipeline.tag': 'GPU batch control / Job queue',
+      'pipeline.desc': 'A control plane that lets multiple batch workloads — inference, training, analysis — share the same GPU fleet, with a <strong>self-loop queue</strong> that keeps GPUs busy by filling idle slots with other workloads. Built on <strong>FastAPI + SQLite + React</strong>; workers join over HTTP heartbeat — no SSH required.',
+      'pipeline.feat1': 'Self-loop queue keeps GPUs from going idle',
+      'pipeline.feat2': 'Multiple workloads share one fleet, with weighted priority',
+      'pipeline.feat3': 'Plug-in based, operated from a web UI',
 
       'common.cta.site': 'Visit site',
 

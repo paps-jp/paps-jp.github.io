@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#2bafa8" />
     <title>ぱっぷすラボ — PAPS-Lab</title>
-    <meta name="description" content="ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan を公開中。" />
+    <meta name="description" content="ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline を公開中。" />
     <link rel="icon" href="img/paps-logo.png" />
     <link rel="alternate" hreflang="ja" href="https://paps-jp.github.io/" />
     <link rel="alternate" hreflang="en" href="https://paps-jp.github.io/?lang=en" />
@@ -13,7 +13,7 @@
     <!-- OGP -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="ぱっぷすラボ — PAPS-Lab" />
-    <meta property="og:description" content="ぱっぷすの支援活動から生まれたツール群。Paprika（ブラウザ自動化）、PAssist（1ウィンドウ共有）、netscan（ネットワーク総合診断）を公開中。" />
+    <meta property="og:description" content="ぱっぷすの支援活動から生まれたツール群。Paprika（ブラウザ自動化）、PAssist（1ウィンドウ共有）、netscan（ネットワーク総合診断）、Pipeline（GPU バッチ制御）を公開中。" />
     <meta property="og:image" content="https://paps-jp.github.io/img/paps-logo.png" />
     <meta property="og:url" content="https://paps-jp.github.io/" />
     <meta property="og:locale" content="ja_JP" />
@@ -31,7 +31,8 @@
         "https://github.com/paps-jp",
         "https://paps-jp.github.io/paprika/",
         "https://paps-jp.github.io/passist/",
-        "https://netscan.paps.jp/"
+        "https://netscan.paps.jp/",
+        "https://paps-jp.github.io/pipeline/"
       ]
     }</script>
     <style>
@@ -114,12 +115,14 @@
       .proj-passist .proj-ico{background:#f4f7fc}
       .proj-netscan .proj-ico{background:var(--teal-l)}
       .proj-netscan .netscan-ic{width:36px;height:36px;color:var(--teal-d);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .proj-pipeline .proj-ico{background:#efeeff}
       .proj h3{margin:0;font-size:22px;letter-spacing:.3px}
       .proj h3 .sub{display:block;font-size:12.5px;color:var(--mut);font-weight:600;margin-top:2px;letter-spacing:.6px;line-height:1.4}
       .proj .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:12px;letter-spacing:.4px}
       .proj-paprika .tag{background:var(--sun-l);color:#9c7a00}
       .proj-passist .tag{background:#eaf1ff;color:#2756c6}
       .proj-netscan .tag{background:var(--teal-l);color:var(--teal-d)}
+      .proj-pipeline .tag{background:#efeeff;color:#4f47a3}
       .proj p.desc{margin:0 0 14px;color:#334052;font-size:14.5px;line-height:1.85;flex:1}
       .proj ul.feat{margin:0 0 18px;padding:0;list-style:none;font-size:13.5px;color:var(--mut)}
       .proj ul.feat li{display:flex;align-items:flex-start;gap:8px;padding:3px 0}
@@ -318,6 +321,34 @@
             </div>
           </article>
 
+          <article class="proj proj-pipeline">
+            <div class="proj-head">
+              <div class="proj-ico"><img src="img/pipeline.png" alt="Pipeline" /></div>
+              <div>
+                <h3>Pipeline<span class="sub" data-i18n="pipeline.sub">パイプライン</span></h3>
+              </div>
+            </div>
+            <span class="tag" data-i18n="pipeline.tag">GPU バッチ制御 / ジョブキュー</span>
+            <p class="desc" data-i18n-html="pipeline.desc">
+              推論・学習・解析などの複数バッチワークロードを同じ GPU フリートに同居させ、
+              <strong>self-loop キュー</strong>で残った空き時間を別の workload で埋める制御プレーン。
+              <strong>FastAPI + SQLite + React</strong> 製、ワーカーへの常駐は HTTP heartbeat のみで SSH 不要。
+            </p>
+            <ul class="feat">
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="pipeline.feat1">self-loop キューで GPU を絶やさない</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="pipeline.feat2">複数 workload を 1 fleet に同居 + 重み配分</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="pipeline.feat3">プラグイン方式 + Web UI で運用</span></li>
+            </ul>
+            <div class="actions">
+              <a class="primary" href="https://paps-jp.github.io/pipeline/" target="_blank" rel="noopener">
+                <svg class="ic"><use href="#i-external"/></svg><span data-i18n="common.cta.site">サイトを開く</span>
+              </a>
+              <a class="outline" href="https://github.com/paps-jp/pipeline" target="_blank" rel="noopener">
+                <svg class="ic"><use href="#i-git-branch"/></svg>GitHub
+              </a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -379,6 +410,7 @@
         <a href="https://paps-jp.github.io/paprika/" target="_blank" rel="noopener">Paprika</a>
         <a href="https://paps-jp.github.io/passist/" target="_blank" rel="noopener">PAssist</a>
         <a href="https://netscan.paps.jp/" target="_blank" rel="noopener">netscan</a>
+        <a href="https://paps-jp.github.io/pipeline/" target="_blank" rel="noopener">Pipeline</a>
       </div>
       <div class="copy" data-i18n="footer.copy">© 特定非営利活動法人ぱっぷす (PAPS)</div>
     </footer>
