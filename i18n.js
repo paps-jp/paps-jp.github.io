@@ -5,7 +5,7 @@
   const dict = {
     ja: {
       'doc.title': 'ぱっぷすラボ — PAPS-Lab',
-      'doc.description': 'ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline を公開中。',
+      'doc.description': 'ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline・whenly を公開中。',
 
       'nav.brand': 'ぱっぷすラボ',
       'nav.projects': 'プロジェクト',
@@ -57,6 +57,13 @@
       'pipeline.feat2': '複数 workload を 1 fleet に同居 + 重み配分',
       'pipeline.feat3': 'プラグイン方式 + Web UI で運用',
 
+      'whenly.sub': 'ウェンリー',
+      'whenly.tag': '日程調整 / スケジュール',
+      'whenly.desc': '主催者が候補日時を提示し、参加者が <strong>○×</strong> で答えるだけで日程が決まる日程調整アプリ。<strong>アカウントなしで始められる</strong>ワンショットモードと、複数イベントを一元管理できるログイン後のダッシュボードを両方用意しています。',
+      'whenly.feat1': '○×回答のシンプル UI',
+      'whenly.feat2': 'URL を共有するだけで参加者が回答できる',
+      'whenly.feat3': 'アカウントなしで始められる（後でアカウント作成も可能）',
+
       'common.cta.site': 'サイトを開く',
 
       'paps.title': '運営団体 — <span class="accent">特定非営利活動法人ぱっぷす</span>',
@@ -82,7 +89,7 @@
 
     en: {
       'doc.title': 'PAPS-Lab — Tools from the front line of survivor support',
-      'doc.description': 'PAPS-Lab open-sources tools and web services born out of the support work of PAPS, a Japanese non-profit. Currently publishing Paprika, PAssist, netscan, and Pipeline.',
+      'doc.description': 'PAPS-Lab open-sources tools and web services born out of the support work of PAPS, a Japanese non-profit. Currently publishing Paprika, PAssist, netscan, Pipeline, and whenly.',
 
       'nav.brand': 'PAPS-Lab',
       'nav.projects': 'Projects',
@@ -133,6 +140,13 @@
       'pipeline.feat1': 'Self-loop queue keeps GPUs from going idle',
       'pipeline.feat2': 'Multiple workloads share one fleet, with weighted priority',
       'pipeline.feat3': 'Plug-in based, operated from a web UI',
+
+      'whenly.sub': 'Scheduling made simple',
+      'whenly.tag': 'Scheduling / Availability polling',
+      'whenly.desc': 'A scheduling app where the organizer proposes candidate dates and participants answer with just <strong>yes or no</strong>. Get going in a <strong>one-shot mode without an account</strong>, or sign in to manage multiple events from a single dashboard.',
+      'whenly.feat1': 'One-tap yes / no availability responses',
+      'whenly.feat2': 'Share a URL — participants can respond with no setup',
+      'whenly.feat3': 'Start without an account (sign up later if you want to)',
 
       'common.cta.site': 'Visit site',
 
