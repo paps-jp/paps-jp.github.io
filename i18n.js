@@ -5,7 +5,7 @@
   const dict = {
     ja: {
       'doc.title': 'ぱっぷすラボ — PAPS-Lab',
-      'doc.description': 'ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline・whenly を公開中。',
+      'doc.description': 'ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline・whenly・短縮URL/QR・セキュファイル便 を公開中。',
 
       'nav.brand': 'ぱっぷすラボ',
       'nav.projects': 'プロジェクト',
@@ -64,6 +64,20 @@
       'whenly.feat2': 'URL を共有するだけで参加者が回答できる',
       'whenly.feat3': 'アカウントなしで始められる（後でアカウント作成も可能）',
 
+      'qr.sub': '短縮URL・QRコード',
+      'qr.tag': '短縮URL / QRコード生成',
+      'qr.desc': '長い URL を短くして、<strong>1 回の入力で短縮 URL と 2 種類の QR コード</strong>（元 URL 用と短縮 URL 用）を同時に作成できる無料サービス。フィッシング・成人向けサイトを <strong>Google Safe Browsing</strong> で自動判定して確認画面を挟むので、SNS・チラシ・イベント告知にも安心して使えます。',
+      'qr.feat1': '短縮URL + 2 種類の QR コードを 1 度に生成',
+      'qr.feat2': 'フィッシング・成人向けサイトを自動判定',
+      'qr.feat3': '/report/&lt;key&gt; で無料アクセス統計',
+
+      'up.sub': 'Secufile-bin',
+      'up.tag': 'セキュアファイル転送',
+      'up.desc': '<strong>端末を離れる前にパスワードで暗号化</strong>してから保存する、登録不要のファイル転送サービス。保存期間（1〜100 日）とダウンロード回数（1〜100 回）を選べて、期限を過ぎたら自動削除。サーバー管理者もパスワードなしでは中身を読めません。',
+      'up.feat1': '端末側で暗号化 — 管理者も中身を読めない',
+      'up.feat2': '保存期間・DL 回数を指定・期限切れ自動削除',
+      'up.feat3': '会員登録不要・受け取り側から削除も可能',
+
       'common.cta.site': 'サイトを開く',
 
       'paps.title': '運営団体 — <span class="accent">特定非営利活動法人ぱっぷす</span>',
@@ -84,12 +98,14 @@
       'values.v4.title': '長く使えるように',
       'values.v4.desc': '依存ライブラリを絞り、ドキュメントを揃え、運用しながら一緒に育てていけるコードを心がけます。',
 
-      'footer.copy': '© 特定非営利活動法人ぱっぷす (PAPS)'
+      'footer.copy': '© 特定非営利活動法人ぱっぷす (PAPS)',
+      'footer.qr': '短縮URL / QR',
+      'footer.up': 'セキュファイル便'
     },
 
     en: {
       'doc.title': 'PAPS-Lab — Tools from the front line of survivor support',
-      'doc.description': 'PAPS-Lab open-sources tools and web services born out of the support work of PAPS, a Japanese non-profit. Currently publishing Paprika, PAssist, netscan, Pipeline, and whenly.',
+      'doc.description': 'PAPS-Lab open-sources tools and web services born out of the support work of PAPS, a Japanese non-profit. Currently publishing Paprika, PAssist, netscan, Pipeline, whenly, a URL shortener + QR, and Secufile-bin.',
 
       'nav.brand': 'PAPS-Lab',
       'nav.projects': 'Projects',
@@ -148,6 +164,20 @@
       'whenly.feat2': 'Share a URL — participants can respond with no setup',
       'whenly.feat3': 'Start without an account (sign up later if you want to)',
 
+      'qr.sub': 'Short URL & QR generator',
+      'qr.tag': 'Short URL / QR code',
+      'qr.desc': 'Shorten long URLs and get <strong>a short URL plus two QR codes</strong> (for the original and the shortened URL) from a single form. Phishing and adult sites are auto-flagged via <strong>Google Safe Browsing</strong>, so it&rsquo;s safe to use in SNS posts, flyers, and event promotions.',
+      'qr.feat1': 'One form → short URL + two QR codes',
+      'qr.feat2': 'Phishing / adult-site auto-detection',
+      'qr.feat3': 'Free access analytics at /report/&lt;key&gt;',
+
+      'up.sub': 'Secufile-bin',
+      'up.tag': 'Secure file transfer',
+      'up.desc': 'A registration-free file-transfer service that <strong>encrypts files on your device before upload</strong>. Choose a retention window (1–100 days) and a download-count cap (1–100). Files auto-delete when either limit runs out, and the server operator cannot read them without the password.',
+      'up.feat1': 'Client-side encryption — the operator can&rsquo;t read files',
+      'up.feat2': 'Flexible retention and download limits with auto-delete',
+      'up.feat3': 'No sign-up; recipients can also delete after download',
+
       'common.cta.site': 'Visit site',
 
       'paps.title': 'Operated by <span class="accent">PAPS</span>',
@@ -168,7 +198,9 @@
       'values.v4.title': 'Built to last',
       'values.v4.desc': 'We keep dependencies small, write proper docs, and ship code we can grow with over the long run.',
 
-      'footer.copy': '© PAPS, a Japanese non-profit'
+      'footer.copy': '© PAPS, a Japanese non-profit',
+      'footer.qr': 'Short URL / QR',
+      'footer.up': 'Secufile-bin'
     }
   };
 
