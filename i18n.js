@@ -5,7 +5,7 @@
   const dict = {
     ja: {
       'doc.title': 'ぱっぷすラボ — PAPS-Lab',
-      'doc.description': 'ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline・whenly・短縮URL/QR・セキュファイル便 を公開中。',
+      'doc.description': 'ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline・whenly・短縮URL/QR・セキュファイル便・payroll-api を公開中。',
 
       'nav.brand': 'ぱっぷすラボ',
       'nav.projects': 'プロジェクト',
@@ -78,6 +78,13 @@
       'up.feat2': '保存期間・DL 回数を指定・期限切れ自動削除',
       'up.feat3': '会員登録不要・受け取り側から削除も可能',
 
+      'payroll.sub': '給与手取り計算',
+      'payroll.tag': '給与計算 / API & MCP',
+      'payroll.desc': '月給または年収を入力するだけで、<strong>健康保険・厚生年金・雇用保険・所得税・住民税</strong>を引いた手取りを自動計算できる Web ツール。<strong>2016 年からの公式料率</strong>に対応していて、同じ計算を API / MCP から呼び出すこともできます。',
+      'payroll.feat1': '社会保険 + 税金をまとめて計算、会社負担も表示',
+      'payroll.feat2': '2016 年以降の過去月を指定して当時の料率で計算',
+      'payroll.feat3': '無料・登録不要 / API・MCP から呼び出し可能',
+
       'common.cta.site': 'サイトを開く',
 
       'paps.title': '運営団体 — <span class="accent">特定非営利活動法人ぱっぷす</span>',
@@ -105,7 +112,7 @@
 
     en: {
       'doc.title': 'PAPS-Lab — Tools from the front line of survivor support',
-      'doc.description': 'PAPS-Lab open-sources tools and web services born out of the support work of PAPS, a Japanese non-profit. Currently publishing Paprika, PAssist, netscan, Pipeline, whenly, a URL shortener + QR, and Secufile-bin.',
+      'doc.description': 'PAPS-Lab open-sources tools and web services born out of the support work of PAPS, a Japanese non-profit. Currently publishing Paprika, PAssist, netscan, Pipeline, whenly, a URL shortener + QR, Secufile-bin, and payroll-api.',
 
       'nav.brand': 'PAPS-Lab',
       'nav.projects': 'Projects',
@@ -177,6 +184,13 @@
       'up.feat1': 'Client-side encryption — the operator can&rsquo;t read files',
       'up.feat2': 'Flexible retention and download limits with auto-delete',
       'up.feat3': 'No sign-up; recipients can also delete after download',
+
+      'payroll.sub': 'Take-home pay calculator',
+      'payroll.tag': 'Payroll / API & MCP',
+      'payroll.desc': 'Enter a monthly or annual salary and get your <strong>take-home pay</strong> after Japanese health insurance, pension, unemployment insurance, income tax, and resident tax. Uses <strong>official rates going back to 2016</strong>, and the same calculation is callable from an API or MCP tool.',
+      'payroll.feat1': 'Combined social-insurance + tax calculation, with employer contribution shown',
+      'payroll.feat2': 'Pick any month since 2016 to compute at that month&rsquo;s official rates',
+      'payroll.feat3': 'Free, no sign-up; callable from your code or AI assistant via API / MCP',
 
       'common.cta.site': 'Visit site',
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#2bafa8" />
     <title>ぱっぷすラボ — PAPS-Lab</title>
-    <meta name="description" content="ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline・whenly・短縮URL/QR・セキュファイル便 を公開中。" />
+    <meta name="description" content="ぱっぷすラボ (PAPS-Lab) は、特定非営利活動法人ぱっぷす (PAPS) の支援活動から生まれたツール・Web サービスを公開する場です。Paprika・PAssist・netscan・Pipeline・whenly・短縮URL/QR・セキュファイル便・payroll-api を公開中。" />
     <link rel="icon" href="img/paps-logo.png" />
     <link rel="alternate" hreflang="ja" href="https://paps-jp.github.io/" />
     <link rel="alternate" hreflang="en" href="https://paps-jp.github.io/?lang=en" />
@@ -13,7 +13,7 @@
     <!-- OGP -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="ぱっぷすラボ — PAPS-Lab" />
-    <meta property="og:description" content="ぱっぷすの支援活動から生まれたツール群。Paprika・PAssist・netscan・Pipeline・whenly・短縮URL&amp;QR・セキュファイル便 を公開中。" />
+    <meta property="og:description" content="ぱっぷすの支援活動から生まれたツール群。Paprika・PAssist・netscan・Pipeline・whenly・短縮URL&amp;QR・セキュファイル便・payroll-api を公開中。" />
     <meta property="og:image" content="https://paps-jp.github.io/img/paps-logo.png" />
     <meta property="og:url" content="https://paps-jp.github.io/" />
     <meta property="og:locale" content="ja_JP" />
@@ -35,7 +35,8 @@
         "https://paps-jp.github.io/pipeline/",
         "https://whenly.paps.jp/",
         "https://qr.paps.jp/",
-        "https://up.paps.jp/"
+        "https://up.paps.jp/",
+        "https://paps-jp.github.io/payroll-api/"
       ]
     }</script>
     <style>
@@ -124,6 +125,8 @@
       .proj-qr .proj-ic{width:36px;height:36px;color:#0e9594;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
       .proj-up .proj-ico{background:#daeceb}
       .proj-up .proj-ic{width:34px;height:34px;color:#00807f;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .proj-payroll .proj-ico{background:linear-gradient(135deg,#edf2ff,#f3eeff)}
+      .proj-payroll .proj-ic{width:36px;height:36px;color:#2f6bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
       .proj h3{margin:0;font-size:22px;letter-spacing:.3px}
       .proj h3 .sub{display:block;font-size:12.5px;color:var(--mut);font-weight:600;margin-top:2px;letter-spacing:.6px;line-height:1.4}
       .proj .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:12px;letter-spacing:.4px}
@@ -134,6 +137,7 @@
       .proj-whenly .tag{background:#eef0ff;color:#4f46e5}
       .proj-qr .tag{background:#e2f3f2;color:#0a6f6e}
       .proj-up .tag{background:#daeceb;color:#00807f}
+      .proj-payroll .tag{background:#edf2ff;color:#2f6bff}
       .proj p.desc{margin:0 0 14px;color:#334052;font-size:14.5px;line-height:1.85;flex:1}
       .proj ul.feat{margin:0 0 18px;padding:0;list-style:none;font-size:13.5px;color:var(--mut)}
       .proj ul.feat li{display:flex;align-items:flex-start;gap:8px;padding:3px 0}
@@ -189,6 +193,7 @@
       <symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
       <symbol id="i-qr-code" viewBox="0 0 24 24"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></symbol>
       <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-calculator" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
     </svg>
 
     <nav class="nav">
@@ -436,6 +441,34 @@
             </div>
           </article>
 
+          <article class="proj proj-payroll">
+            <div class="proj-head">
+              <div class="proj-ico"><svg class="proj-ic" aria-hidden="true"><use href="#i-calculator"/></svg></div>
+              <div>
+                <h3>payroll-api<span class="sub" data-i18n="payroll.sub">給与手取り計算</span></h3>
+              </div>
+            </div>
+            <span class="tag" data-i18n="payroll.tag">給与計算 / API &amp; MCP</span>
+            <p class="desc" data-i18n-html="payroll.desc">
+              月給または年収を入力するだけで、<strong>健康保険・厚生年金・雇用保険・所得税・住民税</strong>を引いた
+              手取りを自動計算できる Web ツール。<strong>2016 年からの公式料率</strong>に対応していて、
+              同じ計算を API / MCP から呼び出すこともできます。
+            </p>
+            <ul class="feat">
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="payroll.feat1">社会保険 + 税金をまとめて計算、会社負担も表示</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="payroll.feat2">2016 年以降の過去月を指定して当時の料率で計算</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="payroll.feat3">無料・登録不要 / API・MCP から呼び出し可能</span></li>
+            </ul>
+            <div class="actions">
+              <a class="primary" href="https://paps-jp.github.io/payroll-api/" target="_blank" rel="noopener">
+                <svg class="ic"><use href="#i-external"/></svg><span data-i18n="common.cta.site">サイトを開く</span>
+              </a>
+              <a class="outline" href="https://github.com/paps-jp/payroll-api" target="_blank" rel="noopener">
+                <svg class="ic"><use href="#i-git-branch"/></svg>GitHub
+              </a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -501,6 +534,7 @@
         <a href="https://whenly.paps.jp/" target="_blank" rel="noopener">whenly</a>
         <a href="https://qr.paps.jp/" target="_blank" rel="noopener" data-i18n="footer.qr">短縮URL / QR</a>
         <a href="https://up.paps.jp/" target="_blank" rel="noopener" data-i18n="footer.up">セキュファイル便</a>
+        <a href="https://paps-jp.github.io/payroll-api/" target="_blank" rel="noopener">payroll-api</a>
       </div>
       <div class="copy" data-i18n="footer.copy">© 特定非営利活動法人ぱっぷす (PAPS)</div>
     </footer>
